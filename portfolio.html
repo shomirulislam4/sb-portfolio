@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#574B90">
+
+    <title>Portfolio - SB</title>
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/icon.png">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="src/css/vendors/normalize.css">
+    <link rel="stylesheet" href="src/css/vendors/bootstrap.css">
+    <link rel="stylesheet" href="src/css/vendors/swiper.css">
+    <link rel="stylesheet" href="src/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+</head>
+<body class="portfolio__page">
+    <!-- Start of Header Section -->
+    <header>
+        <div class="container sb__header">
+            <a href="index.html" class="sb__logo">{ SB }</a>
+            <div class="wrapper">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About Me</a>
+                    <a href="index.html#skills">Skills</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="index.html#testimonials">Testimonials</a>
+                    <a href="blog.html">Blog</a>
+                </nav>
+                <a href="index.html#contactme" class="button__one">Hire Me</a>
+                <button class="sb__mainmenu__close button__three">
+                    <img src="assets/icons/close.svg" alt="close icon">
+                </button>
+            </div>
+            <button class="sb__main__menu button__three">
+                <img src="assets/icons/bar.svg" alt="bar icon">
+            </button>
+        </div>
+    </header>
+    <!-- End of Header Section -->
+
+    <!-- Start of Breadcrumb Section -->
+    <div class="sb__breadcrumb__section">
+        <div class="container">
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- End of Breadcrumb Section -->
+
+    <!-- Start of Portfolio Section -->
+    <section class="sb__portfolio__section">
+        <div class="container">
+            <div class="sb__portfolio__filter__btns">
+                <button class="sbptflobtn button__two active" data-filter="*">All</button>
+                <button class="sbptflobtn button__two" data-filter=".custom">Custom</button>
+                <button class="sbptflobtn button__two" data-filter=".wp">WordPress</button>
+                <button class="sbptflobtn button__two" data-filter=".shpy">Shopify</button>
+            </div>
+
+            <div class="sb__portfolio__grid mb-5">
+                <div class="sbportfolio__item custom wp shpy">
+                    <div class="sb__portfolio__item ">
+                        <img src="assets/images/portfolio/web1.png" alt="completed project">
+                        <div class="holder">
+                            <div class="content">
+                                <div class="tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>Sass</span>
+                                    <span>JavaScript</span>
+                                    <span>WordPress</span>
+                                    <span>Shopify</span>
+                                </div>
+                                <h5 class="title">SB Portfolio - A Portfolio Website!</h5>
+                                <span class="specs">SB Portfolio is a modern HTML5 template built with CSS3, Sass, and JavaScript on Bootstrap. Fully responsive and ideal for developers, programmers, and creatives.</span>
+                                <div class="cta__btns">
+                                    <a href="#" class="button__two" rel="nofollow" target="_blank">Visit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                    <a href="#" class="button__two" rel="nofollow" target="_blank">Github Repo <i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sbportfolio__item shpy">
+                    <div class="sb__portfolio__item ">
+                        <img src="assets/images/portfolio/web1.png" alt="completed project">
+                        <div class="holder">
+                            <div class="content">
+                                <div class="tags">
+                                    <span>Shopify</span>
+                                    <span>Liquid</span>
+                                    <span>CSS</span>
+                                </div>
+                                <h5 class="title">SB Portfolio - A Portfolio Website!</h5>
+                                <span class="specs">SB Portfolio is a modern HTML5 template built with CSS3, Sass, and JavaScript on Bootstrap. Fully responsive and ideal for developers, programmers, and creatives.</span>
+                                <div class="cta__btns">
+                                    <a href="#" class="button__two" rel="nofollow" target="_blank">Visit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                    <a href="#" class="button__two" rel="nofollow" target="_blank">Github Repo <i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sbportfolio__item wp">
+                    <div class="sb__portfolio__item ">
+                        <img src="assets/images/portfolio/web1.png" alt="completed project">
+                        <div class="holder">
+                            <div class="content">
+                                <div class="tags">
+                                    <span>WordPress</span>
+                                    <span>Elementor</span>
+                                    <span>CSS</span>
+                                </div>
+                                <h5 class="title">SB Portfolio - A Portfolio Website!</h5>
+                                <span class="specs">SB Portfolio is a modern HTML5 template built with CSS3, Sass, and JavaScript on Bootstrap. Fully responsive and ideal for developers, programmers, and creatives.</span>
+                                <div class="cta__btns">
+                                    <a href="#" class="button__two" rel="nofollow" target="_blank">Visit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                    <a href="#" class="button__two" rel="nofollow" target="_blank">Github Repo <i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sbportfolio__item wp">
+                    <div class="sb__portfolio__item ">
+                        <img src="assets/images/portfolio/web1.png" alt="completed project">
+                        <div class="holder">
+                            <div class="content">
+                                <div class="tags">
+                                    <span>WordPress</span>
+                                    <span>Elementor</span>
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                </div>
+                                <h5 class="title">SB Portfolio - A Portfolio Website!</h5>
+                                <span class="specs">SB Portfolio is a modern HTML5 template built with CSS3, Sass, and JavaScript on Bootstrap. Fully responsive and ideal for developers, programmers, and creatives.</span>
+                                <div class="cta__btns">
+                                    <a href="#" class="button__two" rel="nofollow" target="_blank">Visit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                    <a href="#" class="button__two" rel="nofollow" target="_blank">Github Repo <i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="button__two mx-auto" href="index.html#contactme">Hire Me</a>
+        </div>
+    </section>
+    <!-- End of Portfolio Section -->
+
+    <!-- Start of Footer Section -->
+    <section class="sb__footer__section">
+        <div class="container">
+            <div class="row top pt-5">
+                <div class="col-md-4 pb-4">
+                    <div class="about">
+                        <a href="index.html" class="sb__logo">{ SB }</a>
+                        <p>I'm Shomirul Islam Bonny, a front-end web developer expert in HTML, CSS, Sass, JS, React, WordPress, and Shopify.</p>
+                        <div class="sb__social__networks">
+                            <a href="https://www.facebook.com/shomirulislambonny" rel="nofollow" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.linkedin.com/in/shomirulislambonny/" rel="nofollow" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://x.com/shomirul_bonny" rel="nofollow" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.pinterest.com/shomirulislambonny/" rel="nofollow" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+                            <a href="https://github.com/shomirulislam4/" rel="nofollow" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 pb-4">
+                    <div class="footer__widgets">
+                        <h6>Quick Links</h6>
+                        <ul>
+                            <li><a href="index.html#about">About Me</a></li>
+                            <li><a href="index.html#skills">Skills</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="index.html#testimonials">Testimonials</a></li>
+                            <li><a href="index.html#contactme">contact me</a></li>
+                            <li><a href="blog.html">blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4 pb-4">
+                    <div class="footer__widgets">
+                        <h6>Skills</h6>
+                        <ul>
+                            <li>HTML, CSS, and JS</li>
+                            <li>WordPress Development</li>
+                            <li>Shopify Development</li>
+                            <li>React, Vite, and Next JS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row bottom">
+                <div class="pb-4 left">
+                    <span class="m-0">&copy; All Rights Reserved.</span>
+                </div>
+
+                <div class="pb-4 right">
+                    <a href="#"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Footer Section -->
+
+    <!-- JS Links -->
+    <script src="src/js/plugins/jquery.js"></script>
+    <script src="src/js/plugins/bootstrap.js"></script>
+    <script src="src/js/plugins/isotope.js"></script>
+    <script src="src/js/plugins/waypoint.js"></script>
+    <script src="src/js/plugins/counterup.min.js"></script>
+    <script src="src/fontawesome/js/fontawesome.js"></script>
+    <script src="src/js/main.js"></script>
+    <script defer src="src/js/anim.js"></script>
+</body>
+</html>
