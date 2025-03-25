@@ -1,0 +1,19 @@
+@use '../base/index' as base;
+
+.sb__breadcrumb__section {
+    margin-top: 50px;
+    
+    nav {
+        padding: 20px;
+        background: base.$cream;
+
+        .breadcrumb {
+            padding: 0;
+            margin: 0;
+
+            li {
+                @include base.medium__text;
+            }
+        }
+    }
+}

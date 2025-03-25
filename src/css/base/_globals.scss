@@ -1,0 +1,21 @@
+@use '../utilities/index' as utils;
+
+html {
+    scroll-behavior: smooth;
+}
+
+span {
+    display: block;
+}
+
+section {
+    margin-top: 120px;
+}
+
+a {
+    @include utils.transition-03s;
+}
+
+body {
+    position: relative;
+}

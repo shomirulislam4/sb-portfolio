@@ -8,16 +8,49 @@
     <title>Blog - SB</title>
 
     <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" type="image/x-icon" href="img/favicon.png">
-    <link rel="apple-touch-icon" href="img/icon.png">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
 
     <!-- CSS Links -->
-    <link rel="stylesheet" href="src/css/vendors/normalize.css">
     <link rel="stylesheet" href="src/css/vendors/bootstrap.css">
-    <link rel="stylesheet" href="src/css/vendors/swiper.css">
     <link rel="stylesheet" href="src/fontawesome/css/fontawesome.css">
-    <link rel="stylesheet" href="src/css/main.css">
-    <link rel="stylesheet" href="src/css/responsive.css">
+    <link rel="stylesheet" href="src/dist/css/main.css">
+    <link rel="stylesheet" href="src/dist/css/responsive.css">
+    
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://exampleportfolio.com/blog.html">
+
+    <!-- Open Graph & Twitter Meta Tags -->
+    <meta property="og:title" content="Your Page Title">
+    <meta property="og:description" content="A short description of your page.">
+    <meta property="og:image" content="https://exampleportfolio.com/image.jpg">
+    <meta property="og:url" content="https://exampleportfolio.com/page">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Page Title">
+    <meta name="twitter:description" content="A short description of your page.">
+    <meta name="twitter:image" content="https://exampleportfolio.com/image.jpg">
+
+    <!-- Schema Markup-->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "jobTitle": "Front-end Web Developer",
+          "url": "https://exampleportfolio.com",
+          "image": "https://exampleportfolio.com/profile.jpg",
+          "sameAs": [
+            "https://github.com/yourprofile",
+            "https://linkedin.com/in/yourprofile",
+            "https://twitter.com/yourprofile"
+          ],
+          "description": "A skilled front-end developer specializing in Shopify, WordPress, and custom web applications.",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Freelance" 
+          },
+          "knowsAbout": ["HTML", "CSS", "Sass", "JavaScript", "React", "Shopify", "WordPress"]
+        }
+    </script>
 </head>
 <body class="blog__page">
     <!-- Start of Header Section -->

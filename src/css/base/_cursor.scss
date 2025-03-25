@@ -1,0 +1,28 @@
+.cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: #FF00FF;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 999999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #FF00FF;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 999998;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: all 0.15s ease-out;
+}

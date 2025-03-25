@@ -1,0 +1,167 @@
+@use './mixin' as utils;
+@use '../base/colors' as base;
+
+/* Scale Animation */
+.scale__anim__hide,
+.scale__anim__hide__inf {
+    opacity: 0;
+    scale: 0.5;
+    transition: 2s;
+}
+
+@media(prefers-reduced-motion) {
+    .scale__anim__hide,
+    .scale__anim__hide__inf {
+        transition: none;
+    }
+}
+
+.scale__anim,
+.scale__anim__inf {
+    opacity: 1;
+    scale: 1;
+}
+
+/* Blur Aimation */
+.blur__anim__hide,
+.blur__anim__hide__inf {
+    opacity: 0;
+    filter: blur(8px);
+    @include utils.transition-06s;
+}
+
+@media(prefers-reduced-motion) {
+    .blur__anim__hide,
+    .blur__anim__hide__inf {
+        transition: none;
+    }
+}
+
+.blur__anim,
+.blur__anim__inf {
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* Slide In */
+.slidein__anim__hide,
+.slidein__anim__hide__inf {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100px);
+    transition: 1s;
+}
+
+@media(prefers-reduced-motion) {
+    .slidein__anim__hide,
+    .slidein__anim__hide__inf {
+        transition: none;
+    }
+}
+
+.slidein__anim,
+.slidein__anim__inf {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+/* Slide Up */
+.slideup__anim__hide,
+.slideup__anim__hide__inf {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100px);
+    transition: 1s;
+}
+
+@media(prefers-reduced-motion) {
+    .slideup__anim__hide,
+    .slideup__anim__hide__inf {
+        transition: none;
+    }
+}
+
+.slideup__anim,
+.slideup__anim__inf {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/*** Start of Testimonials Section Anim ***/
+@keyframes scrolltoTop {
+    to {
+      top: -250px;
+    }
+}
+
+@keyframes scrolltoBottom {
+    to {
+      bottom: -250px;
+    }
+}
+/*** End of Testimonials Section Anim ***/
+
+/* Top to Bottom Anim */
+@keyframes ToptoBottomAnim {
+    0% {
+        transform: translateY(0) translateX(40%);
+    }
+    50% {
+        transform: translateY(100%) translateX(0);
+    }
+    100% {
+        transform: translateY(0) translateX(40%);
+    }
+}
+
+/* Bottom to Top Anim */
+@keyframes BottomtoTopAnim {
+    0% {
+        transform: translateY(100%) translateX(0);
+    }
+    50% {
+        transform: translateY(0) translateX(40%);
+    }
+    100% {
+        transform: translateY(100%) translateX(0);
+    }
+}
+
+/*** Pre Loader ***/
+.pre__loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    background: base.$cream;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-content: center;
+
+    .main__preloader {
+        font-weight: 700;
+        font-family: 'Anonymous Pro', monospace;
+        font-size: 40px;
+        clip-path: inset(0 100% 0 0);
+        animation: PreLoaderAnim 2s steps(11) infinite;
+
+        &::before {
+            content:"Loading..."
+        }
+    }
+
+    .preload__close {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+}
+
+@keyframes PreLoaderAnim {
+    to {
+        clip-path: inset(0 -1ch 0 0)
+    }
+}

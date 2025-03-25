@@ -1,0 +1,561 @@
+@use './base/index' as base;
+@use './components/index' as comps;
+@use './utilities/index' as utils;
+@forward './layouts/index';
+@forward './pages/index';
+
+/*** Start of Hero Section ***/
+.sb__hero__section {
+    height: 750px;
+    margin-top: 0;
+
+    .container,.row {
+        height: 100%;
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-transform: uppercase;
+        height: 100%;
+
+        h3 {
+            font-size: 50px;
+            line-height: 130%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            position: relative;
+            font-size: 136px;
+            line-height: 100%;
+            font-weight: 700;
+
+            &::before {
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                content: '';
+                display: block;
+                height: 100px;
+                width: 100px;
+                background: base.$SecondaryColor;
+                border-radius: 50%;
+                z-index: -1;
+            }
+        }
+
+        .cta__buttons {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+        }
+    }
+
+    .image {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+        
+        img {
+            width: 100%;
+            height: auto;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+    }
+}
+/*** End  of Hero Section ***/
+
+/*** Start of About Me Section ***/
+.sb__aboutme__section {
+    z-index: 1;
+
+    .sectionbgshape.one {
+        top: unset;
+        bottom: -10%;
+    }
+
+    .sectionbgshape.two {
+        left: unset;
+        right: 0;
+        top: -10%;
+        background: base.$SecondaryColor;
+    }
+
+    .wrapper {
+        .about__me span {
+            @include base.large__text;
+            margin-bottom: 20px;
+        }
+        .info {
+            position: sticky;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 40px;
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                width: 60%;
+
+                .itemnum {
+                    display: flex;
+                    align-items: flex-end;
+                    font-size: 60px;
+                    line-height: 100%;
+                    font-weight: 700;
+                    gap: 5px;
+                    font-family: 'Anonymous Pro';
+
+                    span {
+                        font-size: 50px;
+                        line-height: 100%;
+                        font-family: 'Anonymous Pro';
+                    }
+                }
+
+                span {
+                    @include base.large__text;
+                    font-weight: 700;
+                    margin-bottom: 0;
+                    font-family: 'Anonymous Pro';
+                }
+            }
+        }
+    }
+}
+/*** End of About Me Section ***/
+
+/*** Start of Skills Section Section ***/
+.sb__skills__section {
+    background: base.$cream;
+    padding: 100px 0;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    .sectionbgshape {
+        left: unset;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #58C4DC;
+    }
+
+    .wrapper {
+        display: flex;
+        gap: 20px;
+        height: 100%;
+        flex-wrap: wrap;
+
+        .skill__item {
+            flex: 1 1 calc(33.33% - 20px);
+            background: base.$white;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            transform-style: preserve-3d;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                inset: 0px;
+                background: conic-gradient(from 90deg at 40% -40%, base.$PrimaryColor, base.$SecondaryColor);
+                filter: blur(10px);
+                transform: translate3d(0px, 0px, -1px);
+                border-radius: inherit;
+                opacity: 0;
+                @include utils.transition-03s;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+
+            .progress__bar__container {
+                position: relative;
+                width: 100%;
+                height: 8px;
+                background: base.$white;
+                border-radius: 10px;
+                margin-top: 15px;
+                overflow: visible;
+
+                .progress__bar {
+                    position: absolute;
+                    height: 100%;
+                    width: 0;
+                    background: base.$black;
+                    border-radius: 10px;
+                    transition: width 2s ease-out, background 0.3s ease-in-out;
+    
+                    .progress__percent {
+                        position: absolute;
+                        top: -25px;
+                        right: 0;
+                        font-size: 14px;
+                        color: base.$black;
+                        font-weight: bold;
+                        opacity: 1;
+                        z-index: 10;
+                        @include utils.transition-03s;
+                    } 
+                }
+            }
+
+            .icon {
+                font-size: 40px;
+                color: base.$black;
+                margin-bottom: 10px;
+            }
+
+            &:hover {
+                .icon {
+                    color: base.$PrimaryColor;
+                }
+
+                .progress__bar__container .progress__bar {
+                    background: base.$PrimaryColor;
+                    .progress__percent {
+                        color: base.$PrimaryColor;
+                    }
+                }
+                
+                &.sass {
+                    .progress__bar__container .progress__bar {
+                        background: #CF649A;
+                        .progress__percent {
+                            color: #CF649A;
+                        }
+                    }
+                    .icon {
+                        color: #CF649A;
+                    }
+                }
+    
+                &.react {
+                    .progress__bar__container .progress__bar {
+                        background: #58C4DC;
+                        .progress__percent {
+                            color: #58C4DC;
+                        }
+                    }
+                    .icon {
+                        color: #58C4DC;
+                    }
+                }
+    
+                &.wordpress {
+                    .progress__bar__container .progress__bar {
+                        background: #444140;
+                        .progress__percent {
+                            color: #444140;
+                        }
+                    }
+                    .icon {
+                        color: #444140;
+                    }
+                }
+    
+                &.shopify {
+                    .progress__bar__container .progress__bar {
+                        background: #98C14C;
+                        .progress__percent {
+                            color: #98C14C;
+                        }
+                    }
+                    .icon {
+                        color: #98C14C;
+                    }
+                }
+    
+                &.custom {
+                    .progress__bar__container .progress__bar {
+                        background: base.$SecondaryColor;
+                        .progress__percent {
+                            color: base.$SecondaryColor;
+                        }
+                    }
+                    .icon {
+                        color: base.$SecondaryColor;
+                    }
+                }
+            }
+
+            h4 {
+                line-height: 130%;
+            }
+
+            p {
+                color: #777;
+            }
+        }
+    }
+}
+
+@media (min-width: 1600px) {
+    .sb__skills__section .sectionbgshape {
+        height: 400px;
+        width: 400px;
+        right: -5%;
+    }
+}
+/*** End of Skills Section Section ***/
+
+/*** Start of Testimonials Section ***/
+.sb__testimonials__section {
+    .sectionbgshape {
+        background: #444140;
+        animation: ToptoBottomAnim 30s linear infinite;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    
+        .sb__testimonials__col {
+            width: 32%;
+            height: 700px;
+            position: relative;
+            overflow: hidden;
+            mask-image: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 1) 10%,
+                rgba(0, 0, 0, 1) 90%,
+                rgba(0, 0, 0, 0)
+            );
+    
+            --duration: 60s;
+    
+            .testimonials__item {
+                width: 100%;
+                height: 250px;
+                background: base.$cream;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                position: absolute;
+                animation: var(--duration) linear infinite;
+    
+                .top {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+    
+                    .author {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+    
+                        img {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            flex-shrink: 0;
+                            flex-grow: 0;
+                        }
+    
+                        .name {
+                            h6 {
+                                margin-bottom: 0;
+                                font-family: 'Anonymous Pro', monospace;
+                                font-weight: 700;
+                            }
+    
+                            span {
+                                @include base.small__text;
+                                font-family: 'Anonymous Pro', monospace;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+    
+                    .rating {
+                        display: flex;
+                        align-items: center;
+                        @include base.medium__text;
+    
+                        .star__rating {
+                            @include base.small__text;
+                            color: gold;
+                        }
+                    }
+                }
+    
+                .review {
+                    flex: auto;
+                    overflow-y: auto;
+                    @include base.small__text;
+    
+                    &::-webkit-scrollbar {
+                        width: 3px;
+                    }
+                }
+            }
+    
+            &.one .testimonials__item,
+            &.three .testimonials__item {
+                bottom: max(calc(210px * 4), 100%);
+                animation-name: scrolltoBottom;
+            }
+            
+            &.two .testimonials__item {
+                top: max(calc(210px * 4), 100%);
+                animation-name: scrolltoTop;
+            }
+    
+            .testimonials__item:nth-child(1) {
+                animation-delay: calc(var(--duration) / 4 * (4 - 1) * -1);
+            }
+            
+            .testimonials__item:nth-child(2) {
+                animation-delay: calc(var(--duration) / 4 * (4 - 2) * -1);
+            }
+            
+            .testimonials__item:nth-child(3) {
+                animation-delay: calc(var(--duration) / 4 * (4 - 3) * -1);
+            }
+            
+            .testimonials__item:nth-child(4) {
+                animation-delay: calc(var(--duration) / 4 * (4 - 4) * -1);
+            }
+        }
+    }
+}
+/*** End of Testimonials Section ***/
+
+/*** Start of Contact Me Section ***/
+.sb__contactme__section {
+    .sectionbgshape.one {
+        animation: ToptoBottomAnim 30s linear infinite;
+    }
+
+    .sectionbgshape.two {
+        animation: BottomtoTopAnim 30s linear infinite;
+        background: base.$SecondaryColor;
+        left: unset;
+        right: 10%;
+    }
+
+    .wrapper {
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    
+        .left__side {
+            width: 65%;
+            flex-shrink: 0;
+            flex-grow: 0;
+    
+            form {
+                label {
+                    font-family: 'Anonymous Pro', monospace;
+                    font-weight: 700;
+                }
+    
+                button {
+                    margin-top: 20px;
+                }
+            }
+        }
+    
+        .right__side {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: base.$PrimaryColor;
+            padding: 30px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            height: 100%;
+    
+            h3, span, span a {
+                font-family: 'Anonymous Pro', monospace;
+                font-weight: 700;
+                color: base.$white;
+            }
+    
+            span {
+                margin-bottom: 10px;
+                @include base.medium__text;
+    
+                svg {
+                    height: 14px;
+                    width: 14px;
+                }
+            }
+    
+            span a:hover {
+                color: base.$SecondaryColor;
+            }
+        }
+    }
+}
+/*** End of Contact Me Section ***/
+
+/*** Start of Thank You Section ***/
+.sb__thank__you {
+    overflow: hidden;
+    height: 100dvh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    .sectionbgshape.one {
+        animation: ToptoBottomAnim 30s linear infinite;
+        height: 400px;
+        width: 400px;
+    }
+
+    .sectionbgshape.two {
+        animation: BottomtoTopAnim 30s linear infinite;
+        background: base.$SecondaryColor;
+        left: unset;
+        right: 10%;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+
+        h1, p, h5, h1 a {
+            font-family: 'Anonymous Pro', monospace;
+            font-weight: 700;
+        }
+
+        p {
+            color: base.$red;
+        }
+
+        h5 {
+            margin-bottom: 0;
+        }
+
+        .btns {
+            display: flex;
+            gap: 20px;
+        }
+    }
+}
+/*** End of Thank You Section ***/
+
+

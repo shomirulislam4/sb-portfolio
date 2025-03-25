@@ -1,0 +1,26 @@
+@use '../base/index' as base;
+
+.sb__social__networks {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    a {
+        @include base.medium__text;
+        height: 40px;
+        width: 40px;
+        line-height: 40px !important;
+        text-align: center;
+        background: base.$black;
+        color: base.$white;
+        flex-shrink: 0;
+        flex-grow: 0;
+
+        &:hover {
+            background: base.$SecondaryColor;
+            color: base.$black;
+        }
+    }
+}

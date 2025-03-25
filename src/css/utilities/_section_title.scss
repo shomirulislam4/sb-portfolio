@@ -1,0 +1,21 @@
+@use '../base/typography' as base;
+
+.sb__section__title {
+    margin-bottom: 30px;
+
+    h2 {
+        font-family: 'Anonymous Pro', monospace;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .desc {
+        @include base.medium__text;
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 15px;
+        color: #777;
+    }
+}

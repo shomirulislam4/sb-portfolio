@@ -1,0 +1,157 @@
+@use '../base/index' as base;
+@use '../utilities/index' as utils;
+
+/* Portfolio Section */
+.sb__portfolio__section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .sectionbgshape {
+        background: #98C14C;
+        top: 10%;
+    }
+
+    .sectionbgshape.two {
+        background: #CF649A;
+        top: unset;
+        left: unset;
+        right: 0;
+        bottom: 20%;
+    }
+
+    .sb__portfolio__item {
+        display: block;
+        width: 100%;
+        aspect-ratio: 3 / 2.37;
+        position: relative;
+        border: 1px solid #EEE;
+        @include utils.transition-03s;
+        transform-style: preserve-3d;
+    
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            inset: 0px;
+            background: conic-gradient(from 90deg at 40% -40%, base.$PrimaryColor, base.$SecondaryColor);
+            filter: blur(10px);
+            transform: translate3d(0px, 0px, -1px);
+            border-radius: inherit;
+            opacity: 0;
+            @include utils.transition-03s;
+            z-index: -1;
+        }
+    
+        &:hover::before {
+            opacity: 1;
+        }
+    
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    
+        .holder {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            overflow: hidden;
+    
+            .content {
+                @include utils.transition-06s;
+                position: absolute;
+                bottom: -100%;
+                left: 0;
+                z-index: 0;
+                background: linear-gradient(0deg, rgba($color: base.$PrimaryColor, $alpha: 0.8) 50%, rgba(0,0,0,0) 100%);
+                height: fit-content;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 20px;
+                gap: 10px;
+    
+                .tags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    margin-bottom: 0;
+    
+                    span {
+                        @include base.small__text;
+                        padding: 4px 12px;
+                        color: base.$black;
+                        border: 1px solid base.$black;
+                        background: base.$cream;
+                    }
+                }
+    
+                .title {
+                    color: base.$cream;
+                    line-height: 120%;
+                    margin-bottom: 0;
+                    text-transform: capitalize;
+                }
+    
+                .specs {
+                    @include base.small__text;
+                    color: base.$cream;
+                    margin-bottom: 0;
+                }
+    
+                .cta__btns {
+                    display: flex;
+                    gap: 20px;
+    
+                    .button__two {
+                        font-size: 14px;
+                        padding: 12px 22px;
+                    }
+                }
+            }
+        }
+    
+        &:hover .holder .content {
+            bottom: 0;
+        }
+    }
+}
+
+/* Filter Buttons */
+.sb__portfolio__filter__btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+
+    .button__two.active{
+        color: base.$black;
+        &::before {
+            height: 500%;
+        }
+    }
+}
+
+/* Portfolio Page Specific */
+.sb__portfolio__section .sb__portfolio__grid .sbportfolio__item {
+    width: 50%;
+    height: fit-content;
+    padding: 10px;
+}
+
+@media (max-width: 767px) {
+    .sb__portfolio__section .sb__portfolio__grid .sbportfolio__item {
+        width: 100%;
+        padding: 0;
+        padding-bottom: 20px;
+    }
+}

@@ -1,0 +1,64 @@
+@use '../base/colors' as base;
+
+@mixin drop__shadow {
+    box-shadow: 0 0 20px 0 rgba($color: base.$black, $alpha: 0.4);
+}
+
+@mixin text__shadow {
+    text-shadow: 0 0 20px rgba($color: base.$black, $alpha: 0.4);
+}
+
+@mixin primary__blur {
+    background: rgba(base.$cream, $alpha: 0.2);
+    backdrop-filter: blur(9px);
+}
+
+@mixin secondary__blur {
+    background: rgba(base.$cream, $alpha: 0.4);
+    backdrop-filter: blur(4px);
+}
+
+@mixin border__50 {
+    border-radius: 50px;
+}
+
+@mixin border__50p {
+    border-radius: 50%;
+}
+
+@mixin transition-03s {
+    transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+}
+
+@mixin transition-06s {
+    transition: 0.6s ease;
+    -moz-transition: 0.6s ease;
+    -webkit-transition: 0.6s ease;
+    -ms-transition: 0.6s ease;
+    -o-transition: 0.6s ease;
+}
+
+::selection {
+    background: rgba($color: base.$PrimaryColor, $alpha: 0.5);
+    color: base.$cream;
+    font-weight: 700;
+}
+
+a,
+button,
+svg {
+    @include transition-03s;
+    text-decoration: none;
+}
+
+a {
+    color: base.$PrimaryColor;
+    
+    &:hover {
+        color: base.$SecondaryColor;
+    }
+}

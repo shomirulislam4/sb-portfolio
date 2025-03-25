@@ -1,0 +1,20 @@
+@use '../base/index' as base;
+
+.sb__logo {
+    display: block;
+    width: 200px;
+    height: auto;
+    @include base.large__text;
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 700;
+    color: base.$black;
+
+    &:hover {
+        color: base.$SecondaryColor;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
