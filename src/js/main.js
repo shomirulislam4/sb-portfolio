@@ -56,7 +56,6 @@ $(function() {
   });
 });
 
-
 /* Auto Nav Link Select */
 $(function() {
   var $navigationLinks = $('.homepageheader a');
@@ -99,13 +98,14 @@ $(function() {
 
 /* Mobile Menu Toggle */
 $(function(){
-    $('.sb__main__menu').on('click', function(){
-        $('.sb__header .wrapper').addClass('show');
-    })
-    $('.sb__mainmenu__close').on('click', function(){
-        $('.sb__header .wrapper').removeClass('show');
-    })
-})
+  $('.sb__main__menu').on('click', function(){
+    $('.sb__header .wrapper').addClass('show');
+  });
+
+  $('.sb__mainmenu__close, .sb__header .wrapper a').on('click', function(){
+    $('.sb__header .wrapper').removeClass('show');
+  });
+});
 
 /* Hero Section Parallax Effect */
 $(function() {
