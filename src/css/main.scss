@@ -436,6 +436,12 @@
         }
     }
 }
+
+@media (max-width: 575px) {
+    .sb__testimonials__section .sectionbgshape {
+        display: none;
+    }
+}
 /*** End of Testimonials Section ***/
 
 /*** Start of Contact Me Section ***/
